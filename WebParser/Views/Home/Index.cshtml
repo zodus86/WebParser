@@ -1,0 +1,22 @@
+﻿@model WebParser.Models.Parser
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1>Программа по подсчету одинаковых слов</h1>
+</div>
+
+<div class="align-items-center">
+    @using (Html.BeginForm("AddContactAction", "Home", FormMethod.Post))
+    {
+        <p>
+            @Html.LabelFor(m => m.WebHost, "Введите url например http://mail.ru")<br /> 
+            
+            @Html.TextBoxFor(m => m.WebHost)
+        </p>
+        <p>
+            <input type="submit" value="Поиск" />
+        </p>
+    }
+</div>

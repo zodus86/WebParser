@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WebParser.Models.Parser>
+@{
+    ViewData["Title"] = "История запросов";
+}
+<h1> История просмотров </h1>
+
+
+<table class="table-bordered">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WebHost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Result)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in ViewBag.Parser)
+        {
+            <tr>
+                <td>
+                    @item.Id
+                </td>
+                <td>
+                    @item.WebHost
+                </td>
+                <td>
+                    @item.Date
+                </td>
+                <td>
+                    @item.Result
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
